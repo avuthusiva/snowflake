@@ -1,0 +1,1 @@
+insert into test_data(id,name) values(1,'siva'),(2,'reddy'),(3,'avuthu'),(4,'meera'),(5,'potdar');
