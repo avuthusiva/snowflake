@@ -96,3 +96,38 @@ begin
     return 'Views dropped successfully';
 end;
 $$;
+
+execute immediate
+$$
+declare
+    v_db_name string := 'MY_DB';
+    v_schema_name string := 'GITHUB_SCHEMA';
+    v_table_res resultset;
+    v_sql string;
+    v_ddl_script string := '';
+    v_cnt number := 1;
+    v_ddl_res resultset;
+begin
+    v_sql := 'select table_name from information_schema.tables 
+                where table_catalog = ''' || :v_db_name || ''' 
+                and table_schema = ''' || :v_schema_name || '''';
+    v_table_res := (execute immediate :v_sql);
+    --return table(v_table_res);      
+    for tab in v_table_res
+    loop
+        if (v_cnt = 1) then
+            v_ddl_script := 'select get_ddl('|| '''TABLE''' || ',''' || V_db_name || '.' || v_schema_name || '.' ||
+             tab.table_name || ''') from dual'; 
+        else
+            v_ddl_script := v_ddl_script || '\n union all \n select get_ddl(' || '''TABLE''' || ',''' ||
+            V_db_name || '.' || v_schema_name || '.' || tab.table_name || ''') from dual';
+        end if;
+        v_cnt := v_cnt + 1;
+    end loop;
+    v_ddl_res := (execute immediate :v_ddl_script);
+    return table(v_ddl_res);
+end;
+$$;
+
+
+
