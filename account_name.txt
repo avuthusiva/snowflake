@@ -1,1 +1,5 @@
+https://signup.snowflake.com/?trial=student
+
 FGCFEUY-CZC62943
+
+snowsql -a FGCFEUY-CZC62943 -u asvr410

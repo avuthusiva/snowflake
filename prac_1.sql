@@ -1,0 +1,3 @@
+use role accountadmin;
+
+SELECT CURRENT_ORGANIZATION_NAME() || '-' || CURRENT_ACCOUNT_NAME();
