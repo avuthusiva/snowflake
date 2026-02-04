@@ -3,3 +3,21 @@ https://signup.snowflake.com/?trial=student
 FGCFEUY-CZC62943
 
 snowsql -a FGCFEUY-CZC62943 -u asvr410
+
+for installing snowsql on ubuntu
+first need to go to snowflake snowsql page and download the bash file
+provide the executable permission
+write the command as 
+
+sudo bash filename
+/opt/bin --need to provide the file path
+
+
+then need to configure the path variable
+open the file ~/.bashrc
+
+export PATH="$PATH:/opt/bin"
+source ~/.bashrc
+
+now enter the command as snowsql -v
+
