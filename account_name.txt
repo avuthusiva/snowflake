@@ -20,4 +20,3 @@ export PATH="$PATH:/opt/bin"
 source ~/.bashrc
 
 now enter the command as snowsql -v
-
