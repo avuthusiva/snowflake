@@ -18,5 +18,9 @@ open the file ~/.bashrc
 
 export PATH="$PATH:/opt/bin"
 source ~/.bashrc
+snowsql --upgrade 
+cd ~/.snowsql/
+code config
+snowsql -c username
 
 now enter the command as snowsql -v
