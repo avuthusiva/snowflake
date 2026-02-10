@@ -29,4 +29,7 @@ copy into citybike_tripdata
 from @int_stage/files/csv/JC-202601-citibike-tripdata.csv.gz
 file_format=(format_name = csv_skip_header);
 select * from citybike_tripdata limit 10;
-
+show tables like 'my_%';
+show views;
+select * from MY_FIRST_DBT_MODEL;
+select started_at,extract(quarter from started_at) from citybike_tripdata;
