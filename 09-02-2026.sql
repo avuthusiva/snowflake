@@ -82,3 +82,8 @@ from products p,reviews r
 where p.id = r.product_id
 group by all
 order by 1,2;
+select * from citybike_tripdata;
+select * from orders;
+select distinct category from products;
+select * from product_categories;
+desc table product_categories;
