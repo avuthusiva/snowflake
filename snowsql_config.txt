@@ -1,8 +1,6 @@
 https://signup.snowflake.com/?trial=student
 
-FGCFEUY-CZC62943
-
-snowsql -a FGCFEUY-CZC62943 -u asvr410
+snowsql -a PQJQVNA-NQC12425 -u asvr410
 
 for installing snowsql on ubuntu
 first need to go to snowflake snowsql page and download the bash file
